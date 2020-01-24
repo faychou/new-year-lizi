@@ -6,7 +6,7 @@
 
 [原项目地址点击这里查看](https://github.com/Aaaaaaaty/Blog/blob/master/canvas/canvasParticle/main.js)。
 
-废话不多说，直接教大家如何使用。首先大家在公众号回复关键字 "新年粒子动画" 获取代码下载地址。
+废话不多说，直接教大家如何使用。首先大家在公众号【飞舟技术社区】回复关键字 "新年粒子动画" 获取代码下载地址。
 
 
 ``` bash
