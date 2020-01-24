@@ -40,7 +40,7 @@ Bubble.prototype.changeOption = function (option) {
   this.isClick = option.isClick ? option.isClick : false;
 }
 
-// 每一个粒子都会经历由随机粒子 => 展示粒子 => 随机粒子的过程，在这其中我们需要控制好，粒子的坐标，由于在文字与随机移动的切换中，均为缓动效果实现。故我们不单单要在每个状态改变的时候维持好下一个状态下该粒子的坐标，还应该同步保持一个坐标的副本。由于需要通过两个状态下的坐标值算出需要移动的距离，并且这个距离是固定的，所以在状态切换的过程中不能改变这两个坐标值，但是粒子时刻在动，故我们需要一个坐标副本来实时表示当前的粒子坐标位置
+// 由于需要通过两个状态下的坐标值算出需要移动的距离，故我们需要一个坐标副本来实时表示当前的粒子坐标位置
 Bubble.prototype.draw = function (ctx, randomMove) { // 绘制粒子运动
   if (randomMove) {
     var dis = ~~Math.sqrt(Math.pow(Math.abs(this.x - this.randomX), 2) + Math.pow(Math.abs(this.y - this.randomY), 2)),
@@ -101,23 +101,6 @@ Bubble.prototype.draw = function (ctx, randomMove) { // 绘制粒子运动
       ease = 0.05;
       dis = ~~Math.sqrt(Math.pow(Math.abs(this.lastX - x), 2) + Math.pow(Math.abs(this.lastY - y), 2)); 
       
-    // if(this.disRadius !== null) { //半径范围变化 尚未完成
-    //     this.disRadius = ~~ Math.abs(this.lastRadius - maxRaduis)
-    //     if(this.disRadius > 0) {
-    //         if(this.lastRadius < maxRaduis) {
-    //             this.lastRadius += this.disRadius * ease 
-    //         } else {
-    //             this.lastRadius -= this.disRadius * ease
-    //         }
-    //         ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'
-    //         ctx.fill()
-    //         ctx.beginPath()
-    //         ctx.arc(this.x, this.y, this.lastRadius, 0, 2 * Math.PI, false)
-    //         return 
-    //     }  
-
-    // }
-    // this.disRadius = null
     if (dis > 0) {
       if (this.lastX < x) {
         this.lastX += dis * ease;

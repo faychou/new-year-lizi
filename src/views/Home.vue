@@ -26,8 +26,7 @@ export default {
 
     this.canvasCircleInit(myCanvas); // 生成随机粒子
 
-    // this.loadCanvas("fay", myCanvas);
-    setTimeout(this.autoTime.bind(this, 3), 1500) //自动倒计时
+    setTimeout(this.autoTime.bind(this, 5), 1000) //自动倒计时
   },
   methods: {
     getSize() { // 获取可用大小
@@ -52,8 +51,8 @@ export default {
       var ctx = canvas.getContext("2d");
       ctx.font = fontSize + "px Microsoft YaHei";
       ctx.fillStyle = "orange";
-      var pos = this.getPo(canvasBg.width, canvasBg.height, width, fontSize); // 获取图片居中的坐标点
-      console.log('坐标点：', pos);
+      // var pos = this.getPo(canvasBg.width, canvasBg.height, width, fontSize); // 获取图片居中的坐标点
+      // console.log('坐标点：', pos);
       // ctx.fillText(value, pos.x,pos.y);
       ctx.fillText(value, 0, (fontSize / 5) * 4); // 轻微调整绘制字符位置
       this.getImage(canvasBg, canvas); // 导出为图片再导入到 canvas 获取图像数据
